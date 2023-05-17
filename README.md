@@ -5,7 +5,7 @@
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-<a name="readme-top"></a>
+<a id="readme-top"></a>
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -38,6 +38,13 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
+        <li><a href="#features">Features</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
@@ -55,8 +62,8 @@
 ![image](https://github.com/ajd1776/Netflix-History-Dashboard/assets/48261946/9a1574d3-de84-4caf-923a-ee09e52df5a0)
 [![Product Name Screen Shot][product-screenshot]](https://github.com/ajd1776/Netflix-History-Dashboard/assets/48261946/9a1574d3-de84-4caf-923a-ee09e52df5a0)
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 ### Built With
 - Python
@@ -77,10 +84,7 @@ Hosted On: 	[PythonAnywhere](https://www.pythonanywhere.com)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-## Usage
-![image](https://github.com/ajd1776/Netflix-History-Dashboard/assets/48261946/cd81fab5-0671-49bb-953b-3fac9953bbc9)
-
-## Features
+### Features
 - Recently watched shows.
 - Recently watched movies.
 - Most watched show.
@@ -97,6 +101,12 @@ Hosted On: 	[PythonAnywhere](https://www.pythonanywhere.com)
 - Entire watch history available for viewing on the dashboard or downloading as a CSV after processing. 
 
 
+<!-- GETTING STARTED -->
+## Getting Started
+
+This is an example of how you may give instructions on setting up your project locally.
+To get a local copy up and running follow these simple example steps.
+
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
@@ -104,6 +114,7 @@ This is an example of how to list things you need to use the software and how to
   ```sh
   npm install npm@latest -g
   ```
+
 
 <!-- USAGE EXAMPLES -->
 ## Usage
@@ -141,6 +152,15 @@ Don't forget to give the project a star! Thanks again!
 5. Open a Pull Request
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 
 
