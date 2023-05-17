@@ -60,9 +60,6 @@
 ## About The Project
 ![image](https://github.com/ajd1776/Netflix-History-Dashboard/assets/48261946/9a1574d3-de84-4caf-923a-ee09e52df5a0)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 ### Built With
 <a href="https://www.python.org/">
     <img alt="Python" src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=Python"></a>
@@ -81,9 +78,6 @@
 
 Hosted On [PythonAnywhere](https://www.pythonanywhere.com) with a free plan.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 ### Features
 - [x] Recently watched shows.
 - [x] Recently watched movies.
@@ -99,6 +93,8 @@ Hosted On [PythonAnywhere](https://www.pythonanywhere.com) with a free plan.
   -  For example: Activity for each day of the month (numeric) from 2020 to 2021 for January to April.
 - [x] Ratio of shows to movies given in a percentage.
 - [x] Entire watch history available for viewing on the dashboard or downloading as a CSV after processing. 
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- GETTING STARTED -->
@@ -116,8 +112,11 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-### Demo
-https://github.com/ajd1776/Netflix-History-Dashboard/assets/48261946/1c86f02c-eef5-460e-b146-96d3c174bd8f
+### Demos
+https://github.com/ajd1776/Netflix-History-Dashboard/assets/48261946/a1d6ad45-dc70-4984-8b72-68b3cec62867
+https://github.com/ajd1776/Netflix-History-Dashboard/assets/48261946/ba33e9bd-a50b-456a-81ef-b551c64eb77e
+
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
