@@ -5,7 +5,6 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -181,9 +180,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [issues-shield]: https://img.shields.io/github/issues/ajd1776/Netflix-History-Dashboard.svg?style=for-the-badge
 [issues-url]: https://github.com/ajd1776/Netflix-History-Dashboard/issues
 [license-shield]: https://img.shields.io/github/license/ajd1776/Netflix-History-Dashboard.svg?style=for-the-badge
-[license-url]: https://github.com/ajd1776/Netflix-History-Dashboard/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
+[license-url]: ./LICENSE.txt
 
 [product-screenshot]: (https://github.com/ajd1776/Netflix-History-Dashboard/assets/48261946/9a1574d3-de84-4caf-923a-ee09e52df5a0)
 
