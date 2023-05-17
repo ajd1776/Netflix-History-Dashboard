@@ -5,7 +5,7 @@
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-
+<a name="readme-top"></a>
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -52,24 +52,32 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-[![Product Name Screen Shot][product-screenshot]]
+![image](https://github.com/ajd1776/Netflix-History-Dashboard/assets/48261946/9a1574d3-de84-4caf-923a-ee09e52df5a0)
+[![Product Name Screen Shot][product-screenshot]](https://github.com/ajd1776/Netflix-History-Dashboard/assets/48261946/9a1574d3-de84-4caf-923a-ee09e52df5a0)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-### Made with
+### Built With
 - Python
   - Flask, Plotly, Pandas, Dash
 - HTML, CSS, Bootstrap
 
 Hosted On: 	[PythonAnywhere](https://www.pythonanywhere.com)
 
-Created in: Visual Studio Code
+* [![Next][Next.js]][Next-url]
+* [![React][React.js]][React-url]
+* [![Vue][Vue.js]][Vue-url]
+* [![Angular][Angular.io]][Angular-url]
+* [![Svelte][Svelte.dev]][Svelte-url]
+* [![Laravel][Laravel.com]][Laravel-url]
+* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
+* [![JQuery][JQuery.com]][JQuery-url]
 
-## Preview
-![image](https://github.com/ajd1776/Netflix-History-Dashboard/assets/48261946/9a1574d3-de84-4caf-923a-ee09e52df5a0)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## How to use
+
+## Usage
 ![image](https://github.com/ajd1776/Netflix-History-Dashboard/assets/48261946/cd81fab5-0671-49bb-953b-3fac9953bbc9)
 
 ## Features
@@ -88,9 +96,51 @@ Created in: Visual Studio Code
 - Ratio of shows to movies given in a percentage.
 - Entire watch history available for viewing on the dashboard or downloading as a CSV after processing. 
 
-## Demo
 
+### Prerequisites
+
+This is an example of how to list things you need to use the software and how to install them.
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+### Demo
 https://github.com/ajd1776/Netflix-History-Dashboard/assets/48261946/1c86f02c-eef5-460e-b146-96d3c174bd8f
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- ROADMAP -->
+## Roadmap
+
+- [ ] Feature 1
+- [ ] Feature 2
+- [ ] Feature 3
+    - [ ] Nested Feature
+
+See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
@@ -109,6 +159,4 @@ https://github.com/ajd1776/Netflix-History-Dashboard/assets/48261946/1c86f02c-ee
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 
-[product-screenshot]: images/screenshot.png
-
-
+[product-screenshot]: (https://github.com/ajd1776/Netflix-History-Dashboard/assets/48261946/9a1574d3-de84-4caf-923a-ee09e52df5a0)
