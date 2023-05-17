@@ -49,6 +49,14 @@
   </ol>
 </details>
 
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+[![Product Name Screen Shot][product-screenshot]]
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
 ### Made with
 - Python
   - Flask, Plotly, Pandas, Dash
@@ -100,4 +108,7 @@ https://github.com/ajd1776/Netflix-History-Dashboard/assets/48261946/1c86f02c-ee
 [license-url]: https://github.com/ajd1776/Netflix-History-Dashboard/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
+
+[product-screenshot]: images/screenshot.png
+
 
