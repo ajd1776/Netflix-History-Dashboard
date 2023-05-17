@@ -5,6 +5,7 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
+ 
 
 <!-- PROJECT LOGO -->
 <br />
@@ -32,7 +33,7 @@
 
 <!-- TABLE OF CONTENTS -->
 <details>
-  <summary>Table of Contents</summary>
+  <summary><b>Table of Contents</b></summary>
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
@@ -51,8 +52,6 @@
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -60,58 +59,50 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 ![image](https://github.com/ajd1776/Netflix-History-Dashboard/assets/48261946/9a1574d3-de84-4caf-923a-ee09e52df5a0)
-[![Product Name Screen Shot][product-screenshot]](https://github.com/ajd1776/Netflix-History-Dashboard/assets/48261946/9a1574d3-de84-4caf-923a-ee09e52df5a0)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ### Built With
-- Python
-  - Flask, Plotly, Pandas
-- HTML, CSS, Bootstrap
+<a href="https://www.python.org/">
+    <img alt="Python" src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=Python"></a>
+<a href="https://pandas.pydata.org">
+    <img alt="Pandas" src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=Pandas"></a>
+<a href="https://plotly.com/">
+    <img alt="Plotly" src="https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=Plotly"></a>
+<a href="https://flask.palletsprojects.com/en/2.3.x/">
+    <img alt="Flask" src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=Flask"></a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML">
+    <img alt="HTML" src="https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=HTML5&logoColor=white"></a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
+    <img alt="CSS" src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=CSS3"></a>
+<a href="https://getbootstrap.com/">
+    <img alt="Bootstrap" src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=Bootstrap&logoColor=white"></a>
 
-Hosted On: 	[PythonAnywhere](https://www.pythonanywhere.com)
-
-* [![Python][Python-icon]][Python-url]
-* [![Pandas][Pandas-icon]][Pandas-url]
-* [![Plotly Dash][Plotly-icon]][Plotly-url]
-* [![Flask][Flask-icon]][Flask-url]
-* [![HTML 5][HTML-icon]][HTML-url]
-* [![CSS 3][CSS-icon]][CSS-url]
-* [![Bootstrap][Bootstrap-icon]][Bootstrap-url]
-
-https://pandas.pydata.org/
-https://plotly.com/
-https://flask.palletsprojects.com/en/2.3.x/
-
-https://developer.mozilla.org/en-US/docs/Web/HTML
-
+Hosted On [PythonAnywhere](https://www.pythonanywhere.com) with a free plan.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ### Features
-- Recently watched shows.
-- Recently watched movies.
-- Most watched show.
-- Most watched movie.
-- Most active day of the month (numeric) & number of things watched on that day.
-- Most active day of the week (name) & number of things watched on that day.
-- Most active month (name) & number of things watched in that month.
-- Most active year & number of things watched in that year.
-- Activity for each month for a selected year range.
-- Top 1 to 25 shows or movies for a selected year range.
-- Activity for each day of the month for a selected year & month range.
-  - For example: Activity from 2020-2021 for January to April.
-- Ratio of shows to movies given in a percentage.
-- Entire watch history available for viewing on the dashboard or downloading as a CSV after processing. 
+- [x] Recently watched shows.
+- [x] Recently watched movies.
+- [x] Most watched show.
+- [x] Most watched movie.
+- [x] Most active day of the month (numeric) & number of things watched on that day.
+- [x] Most active day of the week (name) & number of things watched on that day.
+- [x] Most active month (name) & number of things watched in that month.
+- [x] Most active year & number of things watched in that year.
+- [x] Activity for each month for a selected year range.
+- [x] Top 1 to 25 shows or movies for a selected year range.
+- [x] Activity for each day of the month for a selected year & month range.
+  -  For example: Activity for each day of the month (numeric) from 2020 to 2021 for January to April.
+- [x] Ratio of shows to movies given in a percentage.
+- [x] Entire watch history available for viewing on the dashboard or downloading as a CSV after processing. 
 
 
 <!-- GETTING STARTED -->
 ## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
@@ -183,24 +174,3 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [license-url]: ./LICENSE.txt
 
 [product-screenshot]: (https://github.com/ajd1776/Netflix-History-Dashboard/assets/48261946/9a1574d3-de84-4caf-923a-ee09e52df5a0)
-
-[Python-icon]:
-[Python-url]:
-[Pandas-icon]:
-[Pandas-url]:
-[Plotly-icon]:
-[Plotly-url]:
-[Flask-icon]:
-[Flask-url]:
-[HTML-icon]:
-[HTML-url]:
-[CSS-icon]:
-[CSS-url]:
-[Bootstrap-icon]:
-[Bootstrap-url]:
-
-https://pandas.pydata.org/
-https://plotly.com/
-https://flask.palletsprojects.com/en/2.3.x/
-
-https://developer.mozilla.org/en-US/docs/Web/HTML
