@@ -68,19 +68,25 @@
 
 ### Built With
 - Python
-  - Flask, Plotly, Pandas, Dash
+  - Flask, Plotly, Pandas
 - HTML, CSS, Bootstrap
 
 Hosted On: 	[PythonAnywhere](https://www.pythonanywhere.com)
 
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+* [![Python][Python-icon]][Python-url]
+* [![Pandas][Pandas-icon]][Pandas-url]
+* [![Plotly Dash][Plotly-icon]][Plotly-url]
+* [![Flask][Flask-icon]][Flask-url]
+* [![HTML 5][HTML-icon]][HTML-url]
+* [![CSS 3][CSS-icon]][CSS-url]
+* [![Bootstrap][Bootstrap-icon]][Bootstrap-url]
+
+https://pandas.pydata.org/
+https://plotly.com/
+https://flask.palletsprojects.com/en/2.3.x/
+
+https://developer.mozilla.org/en-US/docs/Web/HTML
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -166,7 +172,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/ajd1776/Netflix-History-Dashboard.svg?style=for-the-badge
 [contributors-url]: https://github.com/ajd1776/Netflix-History-Dashboard/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/ajd1776/Netflix-History-Dashboard.svg?style=for-the-badge
@@ -181,3 +186,24 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 
 [product-screenshot]: (https://github.com/ajd1776/Netflix-History-Dashboard/assets/48261946/9a1574d3-de84-4caf-923a-ee09e52df5a0)
+
+[Python-icon]:
+[Python-url]:
+[Pandas-icon]:
+[Pandas-url]:
+[Plotly-icon]:
+[Plotly-url]:
+[Flask-icon]:
+[Flask-url]:
+[HTML-icon]:
+[HTML-url]:
+[CSS-icon]:
+[CSS-url]:
+[Bootstrap-icon]:
+[Bootstrap-url]:
+
+https://pandas.pydata.org/
+https://plotly.com/
+https://flask.palletsprojects.com/en/2.3.x/
+
+https://developer.mozilla.org/en-US/docs/Web/HTML
