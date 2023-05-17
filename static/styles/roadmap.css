@@ -1,0 +1,37 @@
+
+#container {
+    display: flex;
+}
+
+#diagram_container {
+    flex: 1;
+    flex-basis: 5%;
+}
+
+#text_container {
+    flex: 1;
+    flex-basis: 25%;
+}
+
+#title {
+    text-align: center;
+}
+
+#circle {
+    width: 30px;
+    height: 30px;
+    background: var(--grey3);
+    border: 2px solid var(--red2);
+    border-radius: 50%
+  }
+
+#line {
+    margin-left: calc(13px);
+    width: 4px;
+    height: 70px;
+    background: var(--red2);
+}
+
+#text {
+    font-size: 20px;
+}

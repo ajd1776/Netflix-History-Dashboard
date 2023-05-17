@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Netflix History Viewer{% endblock %} 
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/home.css')}}">
+
+{% endblock %}
+
+
+{% block body %}
+<div id="welcome_container">
+    <h1 id="welcome">Welcome to your Netflix history visualiser</h1><br>
+
+    <div id="welcome_message">
+        <p>It is recommended you read the  
+        <a id="howTo_link" href="{{ url_for("howTo") }}">"How To"</a>
+           page before continuing</p><br>
+        <p>You must have your file downloaded<br>before accessing your dashboard</p>
+    </div>
+</div>
+
+<div id="dashboard_container">
+    <div id="btn_dashboard">
+        <a href="{{ url_for("dashboard") }}">To Your Dashboard</a>
+    </div>
+</div>
+
+{% endblock %}

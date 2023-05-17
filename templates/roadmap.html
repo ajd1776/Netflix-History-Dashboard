@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Roadmap{% endblock %} 
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/roadmap.css')}}">
+{% endblock %}
+
+
+{% block body %}
+
+<h1 id="title">Roadmap</h1><br><br>
+
+<div id="container">
+
+    <div id="diagram_container">
+        <div id="circle"></div>
+        <div id="line"></div>
+        <div id="circle"></div>
+        <div id="line"></div>
+        <div id="circle"></div>
+        <div id="line"></div>
+        <div id="circle"></div>
+        <div id="line"></div>
+        <div id="circle"></div>
+        <div id="line"></div>
+        <div id="circle"></div>
+        <div id="line"></div>
+        <div id="circle"></div>
+    </div>
+
+    <div id="text_container">
+        <p id=text>Add the ability to signup and</p>
+        <p id=text>Add the ability to signup and</p>
+        <p id=text>Add the ability to signup and</p>
+    </div>
+</div>
+
+{% endblock %}
+# Known issues
+# Advanced show type algorithm
+# Discord for help/suggestions
+# Future features
+    # Filter table
+    # Combine datasets
+    # Accounts
+    # Show data from other APIs
+    # Compare with other accounts

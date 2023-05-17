@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}Netflix History Viewer{% endblock %}</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/const.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/nav.css')}}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+        <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+        {% block head %}
+        {% endblock %}
+        {% block css %}{% endblock %}
+    </head>
+
+    <body>
+        <!-- Nav bar -->
+        <header>
+            <div class="logo">
+                <a href="{{ url_for('home') }}">
+                <img src="{{ url_for('static',filename='img/logo.png')}}" alt="logo" height=60 width=140>
+                </a>
+            </div>
+            <nav>
+                <ul class="nav_links">
+                    <li><a href="howTo">How To</a></li>
+                    <li>
+                        <a href="dashboard">Dashboard</a>
+                    </li>
+                    <li><a href="roadmap">Roadmap</a></li>
+                    <li>
+                        <div>
+                            <button class="accountBtn" type="button">Account</button>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div class="banner_wrap">
+            <div class="banner_move">
+                <div class="banner_item">This app is a beta version, errors may occur</div>
+                <div class="banner_item">This app is a beta version, errors may occur</div>
+            </div>
+        </div>
+
+    {% block body %} 
+
+    {% endblock %}
+    </body>
+</html>

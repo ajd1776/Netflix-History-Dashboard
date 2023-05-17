@@ -1,0 +1,38 @@
+<!--Unused-->
+{% extends "base.html" %}
+
+{% block title %}NHV: Upload File{% endblock %} 
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/upload.css')}}">
+{% endblock %}
+
+
+{% block body %}
+
+<!--Creates custom upload button-->
+<form enctype="multipart/form-data" action="#" method="post">
+    <input id="realFileButton" type="file" name="filename" accept=".csv" hidden="hidden">
+    <button id="customFileButton" type="button">Upload history file</button>
+    <input id="customSubmit" type="submit" value="Upload to dashboard">
+    <p id="responseMsg"><p> 
+</form>
+
+<script type="text/javascript">
+    const realFileBtn = document.getElementById("realFileButton")
+    const customBtn = document.getElementById("customFileButton")
+    const customSubmit = document.getElementById("customSubmit")
+    const responseMsg = document.getElementById("responseMsg")
+    var fileList
+
+
+    customBtn.addEventListener("click", function() {
+        realFileBtn.click()
+    })
+    realFileBtn.addEventListener('change', (event) => {
+        fileList = event.target.files;
+        console.log(fileList);
+    })
+    
+</script>
+{% endblock %}

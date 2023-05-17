@@ -1,0 +1,30 @@
+
+#customFileButton {
+    display: table;
+    margin: 0 auto;
+    margin-top: 20%;
+    background-color: var(--red1);
+    border: none;
+    border-radius: 12px;
+    padding: 12px 28px;
+    font-size: 20px;
+}
+
+#customFileButton:hover {
+    background-color: var(--red2);
+}
+
+#customSubmit {
+    display: table;
+    margin: 0 auto;
+    margin-top: 10px;
+    background-color: var(--red1);
+    border: none;
+    border-radius: 12px;
+    padding: 8px 18px;
+    font-size: 16px;
+}
+
+#customSubmit:hover {
+    background-color: var(--red2);
+}

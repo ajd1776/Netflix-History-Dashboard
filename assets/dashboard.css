@@ -1,0 +1,290 @@
+/* Misc */
+:root {
+    --red1:  #ff0000;
+    --red2:  #cc0000;
+    --red3:  #990000;
+    --grey1: #404040;
+    --grey2: #262626;
+    --grey3: #0c0c0c;
+    --margin: 20px; /* The margins between the segments*/
+  }
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+/* Info banner */
+.banner_wrap {
+    overflow: hidden;
+    background: var(--grey3);
+  }
+   
+.banner_move { display: flex; }
+  
+.banner_item {
+    flex-shrink: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+    text-align: center;
+    color: var(--red1);
+}
+   
+  /* 1 ITEM = -100%, CHANGE THIS IF YOU ADD/REMOVE ITEMS */
+  @keyframes tickerh {
+    0% { transform: translate3d(100%, 0, 0); }
+    100% { transform: translate3d(-200%, 0, 0); }
+  }
+  .banner_move { animation: tickerh linear 40s infinite; }
+  .banner_move:hover { animation-play-state: paused; }
+
+
+
+/* Main body */
+body { 
+    background-color: var(--grey3); 
+}
+
+/* Size for all elements */
+/* 95% max width */
+/* Each space between elements is 40px (20 left 20 right) */
+.recently_watched_show_col, 
+.recently_watched_movie_col {
+    overflow: hidden;
+    width: calc(25% - 20px);    
+}
+.welcome {
+    width: calc(45% - (var(--margin) * 2));    
+}
+.chart1 {
+    width: calc(47.5% - var(--margin));
+}
+.chart2 {
+    width: calc(47.5% - var(--margin));
+}
+.chart3 {
+    width: calc(70% - var(--margin));
+}
+.chart4 {
+    width: calc(25% - var(--margin));
+}
+.history_col {
+    width: 95%;
+}
+
+
+
+/* Outer shell for all segments */
+.chart1, .chart2,
+.chart3, .chart4, 
+.welcome,
+.recently_watched_show_col, 
+.recently_watched_movie_col,
+.history_col {
+    margin: 20px 20px 20px 20px;
+    border-radius: 10px;
+    background: var(--grey2);
+    transition: all .2s ease-in-out;
+}
+.welcome:hover,
+.recently_watched_show_col:hover, 
+.recently_watched_movie_col:hover,
+.chart1:hover, .chart2:hover, .chart3:hover, 
+.chart4:hover, .history_col:hover { 
+    transform: scale(1.04); 
+}
+
+
+
+/* Welcome card */
+#title {
+    padding-top: 10px;
+    text-align: center;
+}
+#metrics_container {
+    margin-top: 10px;
+    text-align: center;
+    overflow: hidden;
+}
+#metrics {
+    padding-top: 20px;
+    justify-content: center;
+    display: grid;
+    grid-gap: 0px 15px;
+    grid-template-columns: repeat(3, [col] 250px );
+    grid-template-rows: repeat(2, [row] auto );
+}
+#btn_home, #metrics *:not(b, #upload) {
+    padding: 5px;
+    border-radius: 10px;
+    background-color: var(--red2);
+    transition: all .2s ease-in-out;
+}
+#btn_home, #metrics *:not(b, #upload):hover { 
+    transform: scale(1.04); 
+}
+
+
+/* Barchart 2 
+".input_radio1"
+".lbl_radio1"
+".radio1" */
+#slider1 {
+    padding-top: 100px;
+    width: 87%;
+    float: left;
+    margin: auto;
+}
+#slider1 .rc-slider {
+    padding-top: 15px;
+}
+#btn1 {
+    all: unset;
+    text-align: center;
+    padding: 5px;
+    background-color: var(--grey3);
+    border: 1px solid var(--red1);
+    border-radius: 8px;
+    width: 90px;
+}
+
+
+
+
+
+/* SLIDER DESIGN */
+/* Rail and tracker */
+.rc-slider-rail {
+    background: var(--grey3);
+}
+.rc-slider-track {
+    background-color: var(--red2);
+}
+/* Marker dot */
+.rc-slider-dot, 
+.rc-slider-dot-active, 
+.rc-slider-handle,
+.rc-slider-handle-click-focused:focus {
+    background-color: var(--grey3);
+    border:  1px solid var(--red1);
+}
+/* Interaction with handles*/
+.rc-slider-handle:hover, .rc-slider-handle:active {
+    border-color: var(--red1);
+}
+.rc-slider-handle-dragging.rc-slider-handle-dragging.rc-slider-handle-dragging {
+    background-color: var(--grey3);
+    border-color: var(--red1);
+    box-shadow: 0 0 0 5px var(--grey1);
+}
+/* Text */
+.rc-slider-mark-text {
+    color: var(--red1)
+}
+.rc-slider-mark-text-active {
+    color: white;
+    font-size: 14px;
+}
+
+
+
+
+
+/* TABLES */
+/* Header styling */
+.column-header-name {
+    border-radius: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    background: var(--red2);
+}
+/* Centre buttons under table */
+#recently_watched_movie,
+#recently_watched_show {
+    text-align: center;
+    font-size: 14px;
+}
+.previous-next-container {
+    background: transparent !important;
+    display: inline;
+}
+/* Button styling */
+button.first-page,
+button.last-page {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: var(--red2);
+    border-radius: 8px;
+    width: 50px;
+}
+button.previous-page,
+button.next-page {
+    background-color: var(--red2);
+    border-radius: 8px;
+    width: 80px;
+}
+/* Hide page number*/
+.dash-table-container .previous-next-container 
+.page-number .current-page-container 
+.current-page-shadow, .dash-table-container 
+.previous-next-container .page-number 
+/*.current-page-container input.current-page*/{
+    display: none !important;
+    border: none !important;
+    background: transparent !important;
+    font-size: 14px;
+}
+/* Outer styling */
+.recently_watched_show_col,
+.recently_watched_movie_col, 
+.welcome {
+    height: 270px;
+    background: var(--grey2);
+}
+
+
+
+/* Custom for history table */
+#hist_title {
+    padding: 5px;
+}
+.history_col {
+    overflow: hidden;
+    text-align: center;
+    padding-top: 5px;
+    border-radius: 10px;
+    background: var(--grey2);
+    transition: all .2s ease-in-out;
+}
+.history_col .column-header-name {
+    font-size: 16px;
+}
+/* Custom Button styling */
+.history_col
+button.first-page,
+.history_col
+button.last-page {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: var(--red2);
+    border-radius: 8px;
+    width: 8%;
+}
+.history_col
+button.previous-page,
+.history_col
+button.next-page {
+    background-color: var(--red2);
+    border-radius: 8px;
+    width: 16%;
+}
+#btn_download {
+    padding: 5px;
+    margin-bottom: 7px;
+    background-color: var(--red2);
+    border: 1px solid var(--red2);
+    border-radius: 8px;
+}

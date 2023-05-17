@@ -1,0 +1,50 @@
+/* Misc */
+:root {
+    --red1:  #ff0000;
+    --red2:  #cc0000;
+    --red3:  #990000;
+    --grey1: #404040;
+    --grey2: #262626;
+    --grey3: #0c0c0c;
+    --margin: 20px; /* The margins between the segments*/
+  }
+
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+/* Main body */
+body {
+    background-color: var(--grey3);
+}
+
+/* Info banner */
+.banner_wrap {
+    overflow: hidden;
+    background: var(--grey3);
+  }
+   
+.banner_move { display: flex; }
+  
+.banner_item {
+    width: 100%;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+    color: var(--red1);
+}
+   
+  /* 1 ITEM = -100%, CHANGE THIS IF YOU ADD/REMOVE ITEMS */
+  @keyframes tickerh {
+    0% { transform: translate3d(100%, 0, 0); }
+    100% { transform: translate3d(-200%, 0, 0); }
+  }
+  .banner_move { animation: tickerh linear 40s infinite; }
+  .banner_move:hover { animation-play-state: paused; }

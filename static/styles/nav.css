@@ -1,0 +1,51 @@
+
+/* Nav bar */
+.logo {
+    cursor: pointer;
+    margin-right: auto;
+}
+
+li, a {
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+header {
+    background-color: var(--grey2);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 5%;
+}
+
+.nav_links {
+    list-style: none;
+}
+
+.nav_links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav_links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.nav_links li a:hover {
+    color: var(--red2);
+}
+
+.accountBtn {
+    background-color: var(--red2);
+    border: none;
+    border-radius: 12px;
+    padding: 8px 18px;
+    font-size: 20px;
+    transition: all 0.3s ease 0s;
+}
+
+.accountBtn:hover {
+    color: var(--red2);
+    background-color: var(--grey3);
+}
