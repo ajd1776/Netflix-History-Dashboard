@@ -22,7 +22,7 @@
     <a href="https://github.com/ajd1776/Netflix-History-Dashboard"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/ajd1776/Netflix-History-Dashboard">View Demo</a>
+    <a href="#Demos">View Demo</a>
     ·
     <a href="https://github.com/ajd1776/Netflix-History-Dashboard/issues">Report Bug</a>
     ·
