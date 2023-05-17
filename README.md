@@ -1,6 +1,3 @@
-# Netflix History Dashboard
-View your Netflix history on this interactive dashboard.
-
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -13,13 +10,13 @@ View your Netflix history on this interactive dashboard.
 <br />
 <div align="center">
   <a href="https://github.com/ajd1776/Netflix-History-Dashboard">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="./static/img/logo.png" alt="Logo" width="300">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">Netflix History Dashboard</h3>
 
   <p align="center">
-    project_description
+    View your Netflix history on this interactive dashboard.
     <br />
     <a href="https://github.com/ajd1776/Netflix-History-Dashboard"><strong>Explore the docs »</strong></a>
     <br />
