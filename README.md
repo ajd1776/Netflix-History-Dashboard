@@ -24,19 +24,26 @@
 </div>
 
 
-<!-- SHIELDS -->
+<!-- PROJECT SHIELDS -->
 <p align="center"> 
- <a href="https://github.com/ajd1776/Netflix-History-Dashboard/graphs/contributors">
-     <img alt="Contributors" src="https://img.shields.io/github/contributors/ajd1776/Netflix-History-Dashboard.svg?style=for-the-badge"></a>
- <a href="https://github.com/ajd1776/Netflix-History-Dashboard/network/members">
-     <img alt="Forks" src="https://img.shields.io/github/forks/ajd1776/Netflix-History-Dashboard.svg?style=for-the-badge"></a>
- <a href="https://github.com/ajd1776/Netflix-History-Dashboard/stargazers">
-     <img alt="Stars" src="https://img.shields.io/github/stars/ajd1776/Netflix-History-Dashboard.svg?style=for-the-badge"></a>
- <a href="https://github.com/ajd1776/Netflix-History-Dashboard/issues">
-     <img alt="Issues" src="https://img.shields.io/github/issues/ajd1776/Netflix-History-Dashboard.svg?style=for-the-badge"></a>
- <a href="./LICENSE.txt">
-     <img alt="License" src="https://img.shields.io/github/license/ajd1776/Netflix-History-Dashboard.svg?style=for-the-badge"></a>
+   <a href="https://github.com/ajd1776/Netflix-History-Dashboard/graphs/contributors">
+       <img alt="Contributors" src="https://img.shields.io/github/contributors/ajd1776/Netflix-History-Dashboard.svg?style=for-the-badge"></a>
+   <a href="https://github.com/ajd1776/Netflix-History-Dashboard/network/members">
+       <img alt="Forks" src="https://img.shields.io/github/forks/ajd1776/Netflix-History-Dashboard.svg?style=for-the-badge"></a>
+   <a href="https://github.com/ajd1776/Netflix-History-Dashboard/stargazers">
+       <img alt="Stars" src="https://img.shields.io/github/stars/ajd1776/Netflix-History-Dashboard.svg?style=for-the-badge"></a>
+   <a href="https://github.com/ajd1776/Netflix-History-Dashboard/issues">
+       <img alt="Issues" src="https://img.shields.io/github/issues/ajd1776/Netflix-History-Dashboard.svg?style=for-the-badge"></a>
+   <a href="./LICENSE.txt">
+       <img alt="License" src="https://img.shields.io/github/license/ajd1776/Netflix-History-Dashboard.svg?style=for-the-badge"></a>
 </p>
+
+<p align="center">
+  <img alt="Lines" src="https://img.shields.io/tokei/lines/github/ajd1776/Netflix-History-Dashboard?style=flat-square"></a>
+  <img alt="Code Size" src="https://img.shields.io/github/languages/code-size/ajd1776/Netflix-History-Dashboard?style=flat-square"></a>
+  <img alt="Files" src="https://img.shields.io/github/directory-file-count/ajd1776/Netflix-History-Dashboard?style=flat-square"></a>
+</p>
+
 
 <!-- TABLE OF CONTENTS -->
 <details>
