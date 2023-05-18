@@ -56,12 +56,6 @@
         <li><a href="#features">Features</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-      </ul>
-    </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
@@ -111,30 +105,15 @@ Hosted On [PythonAnywhere](https://www.pythonanywhere.com) with a free plan.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-<!-- GETTING STARTED -->
-## Getting Started
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
-
 <!-- USAGE EXAMPLES -->
 ## Usage
 
 ### Demos
 
-
 https://github.com/ajd1776/Netflix-History-Dashboard/assets/48261946/a1d6ad45-dc70-4984-8b72-68b3cec62867
 
 
 https://github.com/ajd1776/Netflix-History-Dashboard/assets/48261946/ba33e9bd-a50b-456a-81ef-b551c64eb77e
-
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -142,10 +121,9 @@ https://github.com/ajd1776/Netflix-History-Dashboard/assets/48261946/ba33e9bd-a5
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+- [ ] Add ability for users to upload thier own history file
+- [ ] Update UI for dashboard
+- [ ] Create responsive layout for all devices
 
 See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
 
@@ -174,11 +152,6 @@ Don't forget to give the project a star! Thanks again!
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
 
 
 [product-screenshot]: (https://github.com/ajd1776/Netflix-History-Dashboard/assets/48261946/9a1574d3-de84-4caf-923a-ee09e52df5a0)
