@@ -1,12 +1,5 @@
 <a id="readme-top"></a>
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
- 
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -30,6 +23,20 @@
   </p>
 </div>
 
+
+<!-- SHIELDS -->
+<p align="center"> 
+ <a href="https://github.com/ajd1776/Netflix-History-Dashboard/graphs/contributors">
+     <img alt="Contributors" src="https://img.shields.io/github/contributors/ajd1776/Netflix-History-Dashboard.svg?style=for-the-badge"></a>
+ <a href="https://github.com/ajd1776/Netflix-History-Dashboard/network/members">
+     <img alt="Forks" src="https://img.shields.io/github/forks/ajd1776/Netflix-History-Dashboard.svg?style=for-the-badge"></a>
+ <a href="https://github.com/ajd1776/Netflix-History-Dashboard/stargazers">
+     <img alt="Stars" src="https://img.shields.io/github/stars/ajd1776/Netflix-History-Dashboard.svg?style=for-the-badge"></a>
+ <a href="https://github.com/ajd1776/Netflix-History-Dashboard/issues">
+     <img alt="Issues" src="https://img.shields.io/github/issues/ajd1776/Netflix-History-Dashboard.svg?style=for-the-badge"></a>
+ <a href="./LICENSE.txt">
+     <img alt="License" src="https://img.shields.io/github/license/ajd1776/Netflix-History-Dashboard.svg?style=for-the-badge"></a>
+</p>
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -165,15 +172,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[contributors-shield]: https://img.shields.io/github/contributors/ajd1776/Netflix-History-Dashboard.svg?style=for-the-badge
-[contributors-url]: https://github.com/ajd1776/Netflix-History-Dashboard/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/ajd1776/Netflix-History-Dashboard.svg?style=for-the-badge
-[forks-url]: https://github.com/ajd1776/Netflix-History-Dashboard/network/members
-[stars-shield]: https://img.shields.io/github/stars/ajd1776/Netflix-History-Dashboard.svg?style=for-the-badge
-[stars-url]: https://github.com/ajd1776/Netflix-History-Dashboard/stargazers
-[issues-shield]: https://img.shields.io/github/issues/ajd1776/Netflix-History-Dashboard.svg?style=for-the-badge
-[issues-url]: https://github.com/ajd1776/Netflix-History-Dashboard/issues
-[license-shield]: https://img.shields.io/github/license/ajd1776/Netflix-History-Dashboard.svg?style=for-the-badge
-[license-url]: ./LICENSE.txt
+
 
 [product-screenshot]: (https://github.com/ajd1776/Netflix-History-Dashboard/assets/48261946/9a1574d3-de84-4caf-923a-ee09e52df5a0)
