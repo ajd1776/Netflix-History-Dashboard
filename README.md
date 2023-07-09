@@ -124,9 +124,9 @@ https://github.com/ajd1776/Netflix-History-Dashboard/assets/48261946/ba33e9bd-a5
 ## Roadmap
 
 - [x] Add ability for users to upload thier own history file
+- [ ] Update UI for dashboard - IN PROGRESS
+  - [ ] Create responsive layout for all devices - IN PROGRESS
 - [ ] Social Media share option
-- [ ] Update UI for dashboard
-- [ ] Create responsive layout for all devices
 - [ ] Account creation
   - [ ] Compare with other accounts  
 
