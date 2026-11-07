@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/ajd1776/Netflix-History-Dashboard">
-    <img src="./static/img/logo.png" alt="Logo" width="300">
+    <img src="./web/public/logo.png" alt="Logo" width="300">
   </a>
 
 <h3 align="center">Netflix History Dashboard</h3>
@@ -71,38 +71,25 @@
 ![image](https://github.com/ajd1776/Netflix-History-Dashboard/assets/48261946/9a1574d3-de84-4caf-923a-ee09e52df5a0)
 
 ### Built With
-<a href="https://www.python.org/">
-    <img alt="Python" src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=Python"></a>
-<a href="https://pandas.pydata.org">
-    <img alt="Pandas" src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=Pandas"></a>
-<a href="https://plotly.com/">
-    <img alt="Plotly" src="https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=Plotly"></a>
-<a href="https://flask.palletsprojects.com/en/2.3.x/">
-    <img alt="Flask" src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=Flask"></a>
-<a href="https://developer.mozilla.org/en-US/docs/Web/HTML">
-    <img alt="HTML" src="https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=HTML5&logoColor=white"></a>
-<a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
-    <img alt="CSS" src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=CSS3"></a>
-<a href="https://getbootstrap.com/">
-    <img alt="Bootstrap" src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=Bootstrap&logoColor=white"></a>
+**Analysis (Python):** [pandas](https://pandas.pydata.org) · [FastAPI](https://fastapi.tiangolo.com) · managed with [uv](https://docs.astral.sh/uv/)
 
-Hosted On [PythonAnywhere](https://www.pythonanywhere.com) with a free plan.
+**Display (TypeScript):** [React](https://react.dev) · [Vite](https://vite.dev) · hand-drawn SVG charts using [d3-scale](https://d3js.org/d3-scale) and [d3-shape](https://d3js.org/d3-shape) · CSS styled after Apple's Liquid Glass
+
+Python does the parsing, cleaning, classification and aggregation and returns JSON. React only sums the slices it was sent when a filter changes, so the sliders respond instantly. Uploaded files are analysed in memory and never written to disk.
 
 ### Features
-- [x] Recently watched shows.
-- [x] Recently watched movies.
-- [x] Most watched show.
-- [x] Most watched movie.
-- [x] Most active day of the month (numeric) & number of things watched on that day.
-- [x] Most active day of the week (name) & number of things watched on that day.
-- [x] Most active month (name) & number of things watched in that month.
-- [x] Most active year & number of things watched in that year.
-- [x] Activity for each month for a selected year range.
-- [x] Top 1 to 25 shows or movies for a selected year range.
-- [x] Activity for each day of the month for a selected year & month range.
-  -  For example: Activity for each day of the month (numeric) from 2020 to 2021 for January to April.
-- [x] Ratio of shows to movies given in a percentage.
-- [x] Entire watch history available for viewing on the dashboard or downloading as a CSV after processing. 
+- [x] Upload either Netflix export: `NetflixViewingHistory.csv` or the full-data `ViewingActivity.csv` (trailers are skipped).
+- [x] UK (`31/12/2023`) and US (`12/31/23`) dates detected automatically.
+- [x] Shows and movies told apart, including movies with a colon in the title.
+- [x] Totals, active days, longest streak and a monthly timeline of your whole history.
+- [x] Highlights: top show, top movie, busiest year, month, weekday and date, biggest day and biggest binge.
+- [x] Monthly, day-of-month and day-of-week activity for any year range, plus a month range for day of month.
+- [x] Top 3 to 20 shows or movies for any year range.
+- [x] Episodes vs movies split.
+- [x] A calendar heatmap for each year.
+- [x] Recently watched shows and movies.
+- [x] Searchable history, filterable by type, with export to an expanded CSV.
+- [x] Light and dark mode; respects Reduce Transparency and Reduce Motion.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -110,12 +97,33 @@ Hosted On [PythonAnywhere](https://www.pythonanywhere.com) with a free plan.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-### Demos
+Needs [uv](https://docs.astral.sh/uv/) and Node 20 or later.
+
+```bash
+uv sync --directory api        # Python deps
+npm --prefix web install       # web deps
+```
+
+Development (two terminals, then open http://localhost:5173):
+
+```bash
+npm run dev:api
+npm run dev:web
+```
+
+Production (builds the web app and serves it and the API from http://127.0.0.1:8000):
+
+```bash
+npm start
+```
+
+Tests: `npm test` (pytest for the analysis, plus a type-checked web build).
+
+No CSV to hand? Press **Try sample data** for a made-up history.
+
+### Demos (previous version)
 
 https://github.com/ajd1776/Netflix-History-Dashboard/assets/48261946/a1d6ad45-dc70-4984-8b72-68b3cec62867
-
-
-https://github.com/ajd1776/Netflix-History-Dashboard/assets/48261946/ba33e9bd-a50b-456a-81ef-b551c64eb77e
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -124,8 +132,8 @@ https://github.com/ajd1776/Netflix-History-Dashboard/assets/48261946/ba33e9bd-a5
 ## Roadmap
 
 - [x] Add ability for users to upload thier own history file
-- [ ] Update UI for dashboard - IN PROGRESS
-  - [ ] Create responsive layout for all devices - IN PROGRESS
+- [x] Update UI for dashboard
+  - [x] Create responsive layout for all devices
 - [ ] Social Media share option
 - [ ] Account creation
   - [ ] Compare with other accounts  
