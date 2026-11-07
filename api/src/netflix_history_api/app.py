@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import sys
 from functools import lru_cache
 from pathlib import Path
 from typing import Annotated
@@ -13,7 +14,12 @@ from .analysis import DateOrder, HistoryError, analyse, read_history
 from .sample import sample_csv
 
 MAX_UPLOAD = 20 * 1024 * 1024
-WEB_DIST = Path(__file__).resolve().parents[3] / "web" / "dist"
+# Inside the Mac app (PyInstaller) the built web files sit next to the code.
+WEB_DIST = (
+    Path(getattr(sys, "_MEIPASS", "")) / "web"
+    if getattr(sys, "frozen", False)
+    else Path(__file__).resolve().parents[3] / "web" / "dist"
+)
 
 app = FastAPI(title="Netflix History API")
 
@@ -44,12 +50,6 @@ async def analyze(file: UploadFile, date_order: Annotated[DateOrder, Query()] = 
         raise HTTPException(422, str(exc)) from exc
 
 
-# In production the API also serves the built React app.
+# When built, the API also serves the React app, so one local server does everything.
 if WEB_DIST.is_dir():
     app.mount("/", StaticFiles(directory=WEB_DIST, html=True), name="web")
-
-
-def main() -> None:
-    import uvicorn
-
-    uvicorn.run("netflix_history_api.app:app", host="127.0.0.1", port=8000)

@@ -15,7 +15,7 @@
     <a href="https://github.com/ajd1776/Netflix-History-Dashboard"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://ajd.pythonanywhere.com/">Try It Yourself</a>
+    <a href="#usage">Run It Yourself</a>
     ·
     <a href="#Demos">View Demo</a>
     ·
@@ -75,7 +75,7 @@
 
 **Display (TypeScript):** [React](https://react.dev) · [Vite](https://vite.dev) · hand-drawn SVG charts using [d3-scale](https://d3js.org/d3-scale) and [d3-shape](https://d3js.org/d3-shape) · CSS styled after Apple's Liquid Glass
 
-Python does the parsing, cleaning, classification and aggregation and returns JSON. React only sums the slices it was sent when a filter changes, so the sliders respond instantly. Uploaded files are analysed in memory and never written to disk.
+Python does the parsing, cleaning, classification and aggregation and returns JSON. React only sums the slices it was sent when a filter changes, so the sliders respond instantly. Everything runs on your own computer: the app starts a server that only your machine can reach (`127.0.0.1`), and your history is analysed in memory and never written to disk or sent anywhere.
 
 ### Features
 - [x] Upload either Netflix export: `NetflixViewingHistory.csv` or the full-data `ViewingActivity.csv` (trailers are skipped).
@@ -97,27 +97,39 @@ Python does the parsing, cleaning, classification and aggregation and returns JS
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Needs [uv](https://docs.astral.sh/uv/) and Node 20 or later.
+Netflix History runs entirely on your own computer. There's no website to sign up to and nothing is uploaded anywhere.
+
+### Mac app
+
+1. Download `Netflix-History-mac.zip` from the [Releases](https://github.com/ajd1776/Netflix-History-Dashboard/releases) page and unzip it.
+2. Move **Netflix History.app** to Applications.
+3. The app isn't notarised by Apple, so the first time, **right-click it → Open → Open**. After that it opens normally.
+
+Or build it yourself (needs [uv](https://docs.astral.sh/uv/) and Node 20+):
 
 ```bash
-uv sync --directory api        # Python deps
-npm --prefix web install       # web deps
+npm run build:mac   # creates dist/Netflix History.app and dist/Netflix-History-mac.zip
 ```
 
-Development (two terminals, then open http://localhost:5173):
+### Any computer, in your browser
+
+Needs [uv](https://docs.astral.sh/uv/) and Node 20+.
 
 ```bash
-npm run dev:api
-npm run dev:web
+git clone https://github.com/ajd1776/Netflix-History-Dashboard.git
+cd Netflix-History-Dashboard
+npm --prefix web install
+npm start           # builds, starts the local server and opens your browser
 ```
 
-Production (builds the web app and serves it and the API from http://127.0.0.1:8000):
+### Development
 
 ```bash
-npm start
+npm run dev:api     # terminal 1: API with auto-reload on :8000
+npm run dev:web     # terminal 2: web app with hot reload on http://localhost:5173
+npm run app         # the Mac window, without packaging
+npm test            # pytest + type-checked web build
 ```
-
-Tests: `npm test` (pytest for the analysis, plus a type-checked web build).
 
 No CSV to hand? Press **Try sample data** for a made-up history.
 

@@ -5,7 +5,9 @@
     "dev:api": "uv run --directory api uvicorn netflix_history_api.app:app --reload --port 8000",
     "dev:web": "npm --prefix web run dev",
     "build": "npm --prefix web run build",
-    "start": "npm run build && uv run --directory api netflix-history-api",
+    "start": "npm run build && uv run --directory api netflix-history",
+    "app": "npm run build && uv run --directory api --group desktop netflix-history-app",
+    "build:mac": "./mac/build.sh",
     "test": "uv run --directory api pytest && npm --prefix web run build"
   }
 }

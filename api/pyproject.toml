@@ -11,13 +11,20 @@ dependencies = [
 ]
 
 [project.scripts]
-netflix-history-api = "netflix_history_api.app:main"
+netflix-history = "netflix_history_api.local:main"
+netflix-history-app = "netflix_history_api.desktop:main"
 
 [build-system]
 requires = ["uv_build>=0.13.7,<0.14.0"]
 build-backend = "uv_build"
 
 [dependency-groups]
+build = [
+    "pyinstaller>=6.22.3",
+]
+desktop = [
+    "pywebview>=6.2.1",
+]
 dev = [
     "httpx>=0.28.1",
     "pytest>=9.2.0",

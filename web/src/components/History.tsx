@@ -20,8 +20,16 @@ export function History({ rows }: { rows: HistoryRow[] }) {
   const shown = filtered.slice(p * PAGE, p * PAGE + PAGE)
 
   const download = () => {
-    const url = URL.createObjectURL(new Blob([toCsv(filtered)], { type: 'text/csv' }))
-    const a = Object.assign(document.createElement('a'), { href: url, download: 'ExpandedNetflixHistory.csv' })
+    const csv = toCsv(filtered)
+    const name = 'ExpandedNetflixHistory.csv'
+    // In the Mac app, save through a native Save dialog; in a browser, download.
+    const bridge = window.pywebview?.api
+    if (bridge) {
+      bridge.save_csv(csv, name)
+      return
+    }
+    const url = URL.createObjectURL(new Blob([csv], { type: 'text/csv' }))
+    const a = Object.assign(document.createElement('a'), { href: url, download: name })
     a.click()
     URL.revokeObjectURL(url)
   }
