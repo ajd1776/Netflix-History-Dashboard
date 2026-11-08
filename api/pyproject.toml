@@ -1,0 +1,42 @@
+[project]
+name = "netflix-history-api"
+version = "0.1.0"
+description = "Analysis API for the Netflix History Dashboard"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi>=0.162.2",
+    "pandas>=3.1.1",
+    "python-multipart>=0.0.33",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[project.scripts]
+netflix-history = "netflix_history_api.local:main"
+netflix-history-app = "netflix_history_api.desktop:main"
+
+[build-system]
+requires = ["uv_build>=0.13.7,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+build = [
+    "pyinstaller>=6.22.3",
+]
+desktop = [
+    "pywebview>=6.2.1",
+]
+dev = [
+    "httpx>=0.28.1",
+    "pytest>=9.2.0",
+    "ruff>=0.17.4",
+]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["ignore:Using `httpx` with `starlette.testclient`"]

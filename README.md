@@ -1,163 +1,161 @@
 <a id="readme-top"></a>
 
-<!-- PROJECT LOGO -->
-<br />
 <div align="center">
-  <a href="https://github.com/ajd1776/Netflix-History-Dashboard">
-    <img src="./static/img/logo.png" alt="Logo" width="300">
-  </a>
+  <img src="./web/public/logo.png" alt="Netflix History" width="260">
 
-<h3 align="center">Netflix History Dashboard</h3>
+  <h3>Netflix History</h3>
 
-  <p align="center">
-    View your Netflix history on this interactive dashboard.
-    <br />
-    <a href="https://github.com/ajd1776/Netflix-History-Dashboard"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://ajd.pythonanywhere.com/">Try It Yourself</a>
+  <p>
+    See everything you've watched on Netflix as an interactive dashboard.<br>
+    <b>Fully offline. Nothing is uploaded, nothing is saved.</b>
+  </p>
+
+  <p>
+    <a href="https://github.com/ajd1776/Netflix-History-Dashboard/releases/latest/download/Netflix-History-mac.zip"><b>Download for Mac</b></a>
     ·
-    <a href="#Demos">View Demo</a>
+    <a href="https://github.com/ajd1776/Netflix-History-Dashboard/releases/latest/download/Netflix-History-windows.zip"><b>Download for Windows</b></a>
     ·
-    <a href="https://github.com/ajd1776/Netflix-History-Dashboard/issues">Report Bug</a>
+    <a href="#run-from-source">Run from source</a>
     ·
-    <a href="https://github.com/ajd1776/Netflix-History-Dashboard/issues">Request Feature</a>
+    <a href="https://github.com/ajd1776/Netflix-History-Dashboard/issues">Report a bug</a>
+  </p>
+
+  <p>
+    <a href="https://github.com/ajd1776/Netflix-History-Dashboard/releases/latest"><img alt="Release" src="https://img.shields.io/github/v/release/ajd1776/Netflix-History-Dashboard?style=for-the-badge&color=e50914"></a>
+    <a href="https://github.com/ajd1776/Netflix-History-Dashboard/stargazers"><img alt="Stars" src="https://img.shields.io/github/stars/ajd1776/Netflix-History-Dashboard.svg?style=for-the-badge&color=e50914"></a>
+    <a href="./LICENSE.txt"><img alt="License" src="https://img.shields.io/github/license/ajd1776/Netflix-History-Dashboard.svg?style=for-the-badge&color=e50914"></a>
   </p>
 </div>
 
+![Netflix History dashboard](docs/screenshots/overview-dark.png)
 
-<!-- PROJECT SHIELDS -->
-<p align="center"> 
-   <a href="https://github.com/ajd1776/Netflix-History-Dashboard/graphs/contributors">
-       <img alt="Contributors" src="https://img.shields.io/github/contributors/ajd1776/Netflix-History-Dashboard.svg?style=for-the-badge"></a>
-   <a href="https://github.com/ajd1776/Netflix-History-Dashboard/network/members">
-       <img alt="Forks" src="https://img.shields.io/github/forks/ajd1776/Netflix-History-Dashboard.svg?style=for-the-badge"></a>
-   <a href="https://github.com/ajd1776/Netflix-History-Dashboard/stargazers">
-       <img alt="Stars" src="https://img.shields.io/github/stars/ajd1776/Netflix-History-Dashboard.svg?style=for-the-badge"></a>
-   <a href="https://github.com/ajd1776/Netflix-History-Dashboard/issues">
-       <img alt="Issues" src="https://img.shields.io/github/issues/ajd1776/Netflix-History-Dashboard.svg?style=for-the-badge"></a>
-   <a href="./LICENSE.txt">
-       <img alt="License" src="https://img.shields.io/github/license/ajd1776/Netflix-History-Dashboard.svg?style=for-the-badge"></a>
-</p>
-
-<p align="center">
-  <img alt="Lines" src="https://img.shields.io/tokei/lines/github/ajd1776/Netflix-History-Dashboard?style=flat-square"></a>
-  <img alt="Code Size" src="https://img.shields.io/github/languages/code-size/ajd1776/Netflix-History-Dashboard?style=flat-square"></a>
-  <img alt="Files" src="https://img.shields.io/github/directory-file-count/ajd1776/Netflix-History-Dashboard?style=flat-square"></a>
-</p>
-
-
-<!-- TABLE OF CONTENTS -->
 <details>
-  <summary><b>Table of Contents</b></summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-        <li><a href="#features">Features</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-  </ol>
+  <summary><b>Contents</b></summary>
+
+- [Private by design](#private-by-design)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Download](#download)
+- [Get your Netflix history](#get-your-netflix-history)
+- [Run from source](#run-from-source)
+- [How it works](#how-it-works)
+- [Contributing](#contributing)
+- [License](#license)
+
 </details>
 
+## Private by design
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
-![image](https://github.com/ajd1776/Netflix-History-Dashboard/assets/48261946/9a1574d3-de84-4caf-923a-ee09e52df5a0)
+Netflix History runs **entirely on your own computer**.
 
-### Built With
-<a href="https://www.python.org/">
-    <img alt="Python" src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=Python"></a>
-<a href="https://pandas.pydata.org">
-    <img alt="Pandas" src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=Pandas"></a>
-<a href="https://plotly.com/">
-    <img alt="Plotly" src="https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=Plotly"></a>
-<a href="https://flask.palletsprojects.com/en/2.3.x/">
-    <img alt="Flask" src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=Flask"></a>
-<a href="https://developer.mozilla.org/en-US/docs/Web/HTML">
-    <img alt="HTML" src="https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=HTML5&logoColor=white"></a>
-<a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
-    <img alt="CSS" src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=CSS3"></a>
-<a href="https://getbootstrap.com/">
-    <img alt="Bootstrap" src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=Bootstrap&logoColor=white"></a>
+- **Fully offline.** The app starts a small server that only your own machine can reach (`127.0.0.1`). Nothing goes over the internet; it works with Wi-Fi switched off.
+- **No data saved.** Your CSV is analysed in memory and forgotten when you close the app. It's never written to disk, uploaded, logged or tracked.
+- **No account, no website.** There's nothing to sign up to, and no server anywhere holds your history.
 
-Hosted On [PythonAnywhere](https://www.pythonanywhere.com) with a free plan.
+## Features
 
-### Features
-- [x] Recently watched shows.
-- [x] Recently watched movies.
-- [x] Most watched show.
-- [x] Most watched movie.
-- [x] Most active day of the month (numeric) & number of things watched on that day.
-- [x] Most active day of the week (name) & number of things watched on that day.
-- [x] Most active month (name) & number of things watched in that month.
-- [x] Most active year & number of things watched in that year.
-- [x] Activity for each month for a selected year range.
-- [x] Top 1 to 25 shows or movies for a selected year range.
-- [x] Activity for each day of the month for a selected year & month range.
-  -  For example: Activity for each day of the month (numeric) from 2020 to 2021 for January to April.
-- [x] Ratio of shows to movies given in a percentage.
-- [x] Entire watch history available for viewing on the dashboard or downloading as a CSV after processing. 
+**Overview**
+- Total titles watched, episodes vs movies, active days and your **longest streak** of days in a row.
+- A **timeline** of every month of your history.
+- **Highlights:** top show, top movie, busiest year, busiest month, favourite weekday, busiest date of the month, biggest single day and **biggest binge**.
+- **Monthly activity**, **day of the month** and **day of the week** charts, split into episodes and movies.
+- **Top 3 to 20 shows or movies** for any range of years.
+- **Shows vs movies** split.
+- A **viewing calendar** heatmap for each year.
+- **Recently watched** shows and movies.
+- One **year filter** that updates every chart instantly, plus a month range for the day-of-month chart.
+
+**History**
+- Every title you've watched, with season and episode, **searchable** and filterable by shows or movies.
+- **Export** an expanded CSV with show name, season and episode split into separate columns.
+
+**Smart import**
+- Works with both Netflix exports: `NetflixViewingHistory.csv` and the full-data `ViewingActivity.csv` (trailers and previews are skipped).
+- Works out **UK (`31/12/2023`) and US (`12/31/23`) date formats** automatically.
+- Tells shows from movies, including movies with a colon in the title (like *Mission: Impossible*).
+
+**Design**
+- Liquid Glass styling in Netflix reds, with **light and dark mode**.
+- Respects the system **Reduce Transparency** and **Reduce Motion** settings.
+- Hover any chart for exact numbers.
+- No file to hand? Press **Try sample data** to explore a made-up history.
+
+## Screenshots
+
+| Dark | Light |
+| --- | --- |
+| ![Overview in dark mode](docs/screenshots/overview-dark.png) | ![Overview in light mode](docs/screenshots/overview-light.png) |
+
+| History | Getting started |
+| --- | --- |
+| ![Searchable history](docs/screenshots/history-dark.png) | ![Drop your CSV to begin](docs/screenshots/upload-dark.png) |
+
+## Download
+
+| | |
+| --- | --- |
+| **Mac** (Apple Silicon, M1 and later) | [Netflix-History-mac.zip](https://github.com/ajd1776/Netflix-History-Dashboard/releases/latest/download/Netflix-History-mac.zip) |
+| **Windows** (10 and 11, 64-bit) | [Netflix-History-windows.zip](https://github.com/ajd1776/Netflix-History-Dashboard/releases/latest/download/Netflix-History-windows.zip) |
+
+**Mac:** unzip and drag **Netflix History** into Applications. The app isn't notarised by Apple, so the first time **right-click it → Open → Open**. After that it opens normally.
+
+**Windows:** unzip the folder anywhere and run **Netflix History.exe**. If SmartScreen warns you, choose **More info → Run anyway**. It uses the Microsoft Edge WebView2 runtime that comes with Windows 10 and 11.
+
+Nothing else needs installing: each app includes everything it needs.
+
+## Get your Netflix history
+
+1. Go to [netflix.com/viewingactivity](https://www.netflix.com/viewingactivity) and pick your profile.
+2. Scroll to the bottom and click **Download all**.
+3. Open Netflix History and drop in the `NetflixViewingHistory.csv` you downloaded.
+
+For more detail, request your full data at [netflix.com/account/getmyinfo](https://www.netflix.com/account/getmyinfo) and use `CONTENT_INTERACTION/ViewingActivity.csv` from the archive Netflix sends you.
+
+## Run from source
+
+Needs [uv](https://docs.astral.sh/uv/) and [Node](https://nodejs.org) 20 or later. Works on macOS, Windows and Linux.
+
+```bash
+git clone https://github.com/ajd1776/Netflix-History-Dashboard.git
+cd Netflix-History-Dashboard
+npm --prefix web install
+npm start            # builds the app, starts the local server and opens your browser
+```
+
+Other commands:
+
+```bash
+npm run app          # open it in a desktop window instead of the browser
+npm run build:mac    # package dist/Netflix History.app and a zip (macOS)
+npm test             # Python tests + type-checked web build
+npm run dev:api      # development: API with auto-reload on :8000
+npm run dev:web      # development: web app with hot reload on http://localhost:5173
+```
+
+## How it works
+
+| Part | Built with | Job |
+| --- | --- | --- |
+| `api/` | Python, [pandas](https://pandas.pydata.org), [FastAPI](https://fastapi.tiangolo.com), [uv](https://docs.astral.sh/uv/) | Reads the CSV, detects the date format, separates shows from movies and works out every total, streak and highlight. |
+| `web/` | [React](https://react.dev), [TypeScript](https://www.typescriptlang.org), [Vite](https://vite.dev) | Draws the dashboard. Charts are hand-built SVG using [d3-scale](https://d3js.org/d3-scale) and [d3-shape](https://d3js.org/d3-shape) for full control of the design. |
+| `desktop/` | [pywebview](https://pywebview.flowrl.com), [PyInstaller](https://pyinstaller.org) | Packages both into a native Mac or Windows app. |
+
+Python does all the analysis and sends the results to the page once. When you move a filter, the page only re-adds numbers it already has, so every chart updates instantly. New releases are built for Mac and Windows automatically by [GitHub Actions](.github/workflows/release.yml).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-### Demos
-
-https://github.com/ajd1776/Netflix-History-Dashboard/assets/48261946/a1d6ad45-dc70-4984-8b72-68b3cec62867
-
-
-https://github.com/ajd1776/Netflix-History-Dashboard/assets/48261946/ba33e9bd-a50b-456a-81ef-b551c64eb77e
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [x] Add ability for users to upload thier own history file
-- [ ] Update UI for dashboard - IN PROGRESS
-  - [ ] Create responsive layout for all devices - IN PROGRESS
-- [ ] Social Media share option
-- [ ] Account creation
-  - [ ] Compare with other accounts  
-
-
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<!-- CONTRIBUTING -->
 ## Contributing
-Any contributions you make are **greatly appreciated**.
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
+Suggestions and pull requests are welcome. Open an [issue](https://github.com/ajd1776/Netflix-History-Dashboard/issues) with the tag "enhancement", or:
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+1. Fork the project
+2. Create a branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push the branch (`git push origin feature/AmazingFeature`)
+5. Open a pull request
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the MIT License. See [`LICENSE.txt`](./LICENSE.txt).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-[product-screenshot]: (https://github.com/ajd1776/Netflix-History-Dashboard/assets/48261946/9a1574d3-de84-4caf-923a-ee09e52df5a0)
