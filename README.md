@@ -123,7 +123,13 @@ Netflix History runs **entirely on your own computer**.
 | **Mac** (Apple Silicon, M1 and later) | [Netflix-History-mac.zip](https://github.com/ajd1776/Netflix-History-Dashboard/releases/latest/download/Netflix-History-mac.zip) |
 | **Windows** (10 and 11, 64-bit) | [Netflix-History-windows.zip](https://github.com/ajd1776/Netflix-History-Dashboard/releases/latest/download/Netflix-History-windows.zip) |
 
-**Mac:** unzip and drag **Netflix History** into Applications. The app isn't notarised by Apple, so the first time **right-click it → Open → Open**. After that it opens normally.
+**Mac:** unzip and drag **Netflix History** into Applications. The app isn't notarised by Apple, so macOS blocks it the first time:
+
+1. Open the app, then click **Done** on the warning.
+2. Go to **System Settings → Privacy & Security** and scroll down to **Security**.
+3. Click **Open Anyway** next to Netflix History, then confirm.
+
+You only need to do this once. After that it opens normally.
 
 **Windows:** unzip the folder anywhere and run **Netflix History.exe**. If SmartScreen warns you, choose **More info → Run anyway**. It uses the Microsoft Edge WebView2 runtime that comes with Windows 10 and 11.
 
