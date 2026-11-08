@@ -1,7 +1,6 @@
-"""Turn a Netflix viewing-history CSV into the JSON the dashboard draws.
+"""Read a Netflix viewing-history CSV into a clean, enriched DataFrame.
 
-Python does all the parsing, cleaning, classification and aggregation here.
-The frontend only sums the pre-aggregated slices when a filter changes.
+One row per play, newest first, with the show/movie split worked out.
 """
 
 from __future__ import annotations
@@ -14,10 +13,6 @@ from typing import Literal
 import pandas as pd
 
 DateOrder = Literal["auto", "dmy", "mdy"]
-
-MONTHS = ["January", "February", "March", "April", "May", "June", "July",
-          "August", "September", "October", "November", "December"]
-WEEKDAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
 # A second title segment like "Season 2", "Limited Series", "Part 1" marks a TV episode.
 _EPISODIC = re.compile(
@@ -35,9 +30,6 @@ class HistoryError(ValueError):
 class Parsed:
     frame: pd.DataFrame
     date_order: Literal["dmy", "mdy", "iso"]
-
-
-# ---------------------------------------------------------------- parsing
 
 
 def read_history(raw: bytes, date_order: DateOrder = "auto") -> Parsed:
@@ -129,104 +121,3 @@ def _enrich(df: pd.DataFrame) -> pd.DataFrame:
         "day": dates.dt.day,
         "weekday": dates.dt.day_of_week,
     }).sort_values("date", ascending=False, kind="stable").reset_index(drop=True)
-
-
-# ---------------------------------------------------------------- analysis
-
-
-def analyse(parsed: Parsed) -> dict:
-    df = parsed.frame
-    shows, movies = df[df["kind"] == "show"], df[df["kind"] == "movie"]
-    per_day = df.groupby("date").size()
-
-    return {
-        "meta": {
-            "records": len(df),
-            "first": df["date"].min().date().isoformat(),
-            "last": df["date"].max().date().isoformat(),
-            "years": sorted(int(y) for y in df["year"].unique()),
-            "dateOrder": parsed.date_order,
-        },
-        "totals": {
-            "shows": len(shows),
-            "movies": len(movies),
-            "distinctShows": int(shows["name"].nunique()),
-            "distinctMovies": int(movies["name"].nunique()),
-            "activeDays": len(per_day),
-            "longestStreak": _longest_streak(per_day.index),
-        },
-        "highlights": _highlights(df, shows, movies, per_day),
-        # [year, month, day, weekday, shows, movies] per active date
-        "daily": _daily(df),
-        # [name, kind, year, count] — summed client-side for any year range
-        "titles": _titles(df),
-        "history": df.assign(date=df["date"].dt.strftime("%Y-%m-%d"))[
-            ["date", "title", "kind", "name", "season", "episode"]
-        ].to_dict("records"),
-    }
-
-
-def _top(series: pd.Series) -> tuple[object, int] | None:
-    if series.empty:
-        return None
-    counts = series.value_counts()
-    return counts.index[0], int(counts.iloc[0])
-
-
-def _highlights(df, shows, movies, per_day) -> list[dict]:
-    out: list[dict] = []
-
-    def add(key, label, top, fmt=str):
-        if top:
-            out.append({"key": key, "label": label, "value": fmt(top[0]), "count": top[1]})
-
-    add("topShow", "Top show", _top(shows["name"]))
-    add("topMovie", "Top movie", _top(movies["name"]))
-    add("busiestYear", "Busiest year", _top(df["year"]))
-    add("busiestMonth", "Busiest month", _top(df["month"]), lambda m: MONTHS[m - 1])
-    add("favouriteWeekday", "Favourite day", _top(df["weekday"]), lambda d: WEEKDAYS[d])
-    add("busiestDayOfMonth", "Busiest date of the month", _top(df["day"]), _ordinal)
-
-    if not per_day.empty:
-        day = per_day.idxmax()
-        out.append({"key": "biggestDay", "label": "Biggest day",
-                    "value": _day(day), "count": int(per_day.max())})
-    if not shows.empty:
-        binge = shows.groupby(["date", "name"]).size()
-        (date, name), n = binge.idxmax(), int(binge.max())
-        out.append({"key": "biggestBinge", "label": "Biggest binge",
-                    "value": name, "count": n, "detail": _day(date)})
-    return out
-
-
-def _longest_streak(dates: pd.DatetimeIndex) -> int:
-    if len(dates) == 0:
-        return 0
-    d = pd.Series(dates.sort_values())
-    run_id = (d.diff().dt.days != 1).cumsum()
-    return int(run_id.value_counts().max())
-
-
-def _daily(df: pd.DataFrame) -> list[list[int]]:
-    g = (df.pivot_table(index="date", columns="kind", values="title", aggfunc="size", fill_value=0)
-           .reindex(columns=["show", "movie"], fill_value=0)
-           .sort_index())
-    idx = g.index
-    return [[int(y), int(m), int(d), int(w), int(s), int(v)]
-            for y, m, d, w, s, v in zip(idx.year, idx.month, idx.day, idx.day_of_week,
-                                        g["show"], g["movie"], strict=True)]
-
-
-def _titles(df: pd.DataFrame) -> list[list]:
-    g = df.groupby(["name", "kind", "year"]).size().reset_index(name="n")
-    return [[r.name, r.kind, int(r.year), int(r.n)] for r in g.itertuples(index=False)]
-
-
-def _day(ts: pd.Timestamp) -> str:
-    # "%-d" (no leading zero) is not supported by strftime on Windows.
-    return f"{ts.day} {ts:%b %Y}"
-
-
-def _ordinal(n: int) -> str:
-    suffix = "th" if 10 <= n % 100 <= 20 else {1: "st", 2: "nd", 3: "rd"}.get(n % 10, "th")
-    return f"{n}{suffix}"

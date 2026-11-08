@@ -38,24 +38,40 @@ export function totals(rows: DailyRow[]) {
   return { shows, movies, all: shows + movies }
 }
 
-/** One point per calendar month between the first and last record, zeros included. */
-export function timeline(daily: DailyRow[]) {
+export type MonthPoint = Split & { date: Date; avg: number }
+
+/**
+ * One point per calendar month between the first and last record, zeros included,
+ * with a centred 3-month average to show the trend.
+ */
+export function timeline(daily: DailyRow[]): MonthPoint[] {
   if (!daily.length) return []
-  const map = new Map<number, Split & { date: Date }>()
   const key = (y: number, m: number) => y * 12 + (m - 1)
   const first = key(daily[0][0], daily[0][1])
   const last = key(daily.at(-1)![0], daily.at(-1)![1])
+  const points: MonthPoint[] = []
   for (let k = first; k <= last; k++) {
     const y = Math.floor(k / 12)
     const m = k % 12
-    map.set(k, { label: `${MONTHS[m]} ${y}`, date: new Date(y, m, 1), shows: 0, movies: 0 })
+    points.push({ label: `${MONTHS[m]} ${y}`, date: new Date(y, m, 1), shows: 0, movies: 0, avg: 0 })
   }
   for (const r of daily) {
-    const p = map.get(key(r[0], r[1]))!
+    const p = points[key(r[0], r[1]) - first]
     p.shows += r[4]
     p.movies += r[5]
   }
-  return [...map.values()]
+  points.forEach((p, i) => {
+    const near = points.slice(Math.max(0, i - 1), i + 2)
+    p.avg = near.reduce((s, q) => s + q.shows + q.movies, 0) / near.length
+  })
+  return points
+}
+
+/** Plays by weekday (rows, Monday first) and month (columns). */
+export function weekdayByMonth(rows: DailyRow[]) {
+  const grid = Array.from({ length: 7 }, () => new Array<number>(12).fill(0))
+  for (const r of rows) grid[r[3]][r[1] - 1] += r[4] + r[5]
+  return grid
 }
 
 export function topTitles(titles: TitleRow[], kind: Kind, years: Range, n: number) {

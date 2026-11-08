@@ -1,9 +1,8 @@
 import pytest
 from fastapi.testclient import TestClient
 
-from netflix_history_api.analysis import HistoryError, analyse, read_history
 from netflix_history_api.app import app
-from netflix_history_api.sample import sample_csv
+from netflix_history_api.parsing import HistoryError, read_history
 
 
 def csv(*rows: tuple[str, str]) -> bytes:
@@ -61,15 +60,6 @@ def test_viewing_activity_format_drops_trailers():
 def test_rejects_non_history():
     with pytest.raises(HistoryError):
         read_history(b"foo,bar\n1,2\n")
-
-
-def test_analyse_sample_shape():
-    out = analyse(read_history(sample_csv()))
-    assert out["meta"]["dateOrder"] == "dmy"
-    assert out["meta"]["last"] == "2025-10-31"
-    assert sum(r[4] + r[5] for r in out["daily"]) == out["meta"]["records"]
-    assert sum(t[3] for t in out["titles"]) == out["meta"]["records"]
-    assert {h["key"] for h in out["highlights"]} >= {"topShow", "topMovie", "biggestBinge"}
 
 
 def test_api_upload_roundtrip():

@@ -2,16 +2,16 @@ import { bisector } from 'd3-array'
 import { scaleLinear, scaleTime } from 'd3-scale'
 import { area, curveMonotoneX, line } from 'd3-shape'
 import { useId, useState, type PointerEvent } from 'react'
-import { fmt, type Split } from '../../lib/aggregate'
+import { fmt, type MonthPoint, type Range } from '../../lib/aggregate'
 import { useWidth } from '../../lib/useWidth'
 import { Tooltip } from '../Glass'
 import { Row } from './BarChart'
 
-type Point = Split & { date: Date }
+type Point = MonthPoint
 const M = { t: 16, r: 8, b: 26, l: 34 }
 
-/** Stacked area of monthly activity over the whole history. */
-export function Timeline({ data, height = 220 }: { data: Point[]; height?: number }) {
+/** Stacked area of monthly activity, a 3-month trend line, and the filtered years highlighted. */
+export function Timeline({ data, height = 230, range }: { data: Point[]; height?: number; range?: Range }) {
   const [ref, width] = useWidth<HTMLDivElement>()
   const [hover, setHover] = useState<number | null>(null)
   const id = useId().replace(/[^a-zA-Z0-9]/g, '')
@@ -28,6 +28,10 @@ export function Timeline({ data, height = 220 }: { data: Point[]; height?: numbe
   const movies = area<Point>().x((d) => x(d.date)).y0((d) => y(d.shows))
     .y1((d) => y(d.shows + d.movies)).curve(curveMonotoneX)
   const top = line<Point>().x((d) => x(d.date)).y((d) => y(d.shows + d.movies)).curve(curveMonotoneX)
+  const trend = line<Point>().x((d) => x(d.date)).y((d) => y(d.avg)).curve(curveMonotoneX)
+  // Shade the months outside the year filter.
+  const x0 = range ? Math.max(0, x(new Date(range[0], 0, 1))) : 0
+  const x1 = range ? Math.min(iw, x(new Date(range[1] + 1, 0, 1))) : iw
 
   const years = [...new Set(data.map((d) => d.date.getFullYear()))]
   const yearTicks = years.map((yr) => new Date(yr, 0, 1)).filter((d) => d >= data[0].date)
@@ -69,6 +73,9 @@ export function Timeline({ data, height = 220 }: { data: Point[]; height?: numbe
             <path d={shows(data)!} fill={`url(#s${id})`} />
             <path d={movies(data)!} fill={`url(#m${id})`} />
             <path d={top(data)!} className="area-line" />
+            <path d={trend(data)!} className="trend-line" />
+            {x0 > 0 && <rect className="outside" width={x0} height={ih} />}
+            {x1 < iw && <rect className="outside" x={x1} width={iw - x1} height={ih} />}
             {h && (
               <g className="crosshair" transform={`translate(${x(h.date)},0)`}>
                 <line y2={ih} />
@@ -84,6 +91,7 @@ export function Timeline({ data, height = 220 }: { data: Point[]; height?: numbe
           <strong>{h.label}</strong>
           <Row k="Episodes" v={h.shows} c="var(--show)" />
           <Row k="Movies" v={h.movies} c="var(--movie)" />
+          <Row k="3-month avg" v={Math.round(h.avg)} c="var(--text-2)" />
         </Tooltip>
       )}
     </div>

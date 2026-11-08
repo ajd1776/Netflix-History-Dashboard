@@ -4,8 +4,36 @@ export interface Highlight {
   key: string
   label: string
   value: string
-  count: number
-  detail?: string
+  sub: string
+}
+
+export interface Insight {
+  key: string
+  text: string
+}
+
+export interface YearStats {
+  year: number
+  shows: number
+  movies: number
+  activeDays: number
+  distinctShows: number
+  newShows: number
+  newMovies: number
+}
+
+export interface ShowStats {
+  name: string
+  plays: number
+  episodes: number
+  seasons: number
+  first: string
+  last: string
+  days: number
+  perDay: number
+  binges: number
+  /** plays per year, aligned with meta.years */
+  byYear: number[]
 }
 
 export interface HistoryRow {
@@ -30,9 +58,20 @@ export interface Analysis {
     distinctShows: number
     distinctMovies: number
     activeDays: number
+    spanDays: number
+    activeShare: number
+    avgPerActiveDay: number
+    weekendShare: number
     longestStreak: number
+    longestBreak: { days: number; from: string | null; to: string | null }
+    bingeSessions: number
+    bingeShare: number
+    rewatches: number
   }
   highlights: Highlight[]
+  insights: Insight[]
+  yearly: YearStats[]
+  shows: ShowStats[]
   daily: DailyRow[]
   titles: TitleRow[]
   history: HistoryRow[]

@@ -5,13 +5,18 @@ import { useWidth } from '../../lib/useWidth'
 import { Tooltip } from '../Glass'
 
 const M = { t: 22, r: 4, b: 26, l: 34 }
+const NAMES = { shows: 'Episodes', movies: 'Movies' }
 
 /** Stacked shows/movies columns. Movies sit on top, so the stack's outline takes their colour. */
-export function BarChart({ data, height = 240, tickEvery = 1, tooltipLabel = (s: Split) => s.label }: {
+export function BarChart({
+  data, height = 240, tickEvery = 1, tooltipLabel = (s: Split) => s.label, names = NAMES,
+}: {
   data: Split[]
   height?: number
   tickEvery?: number
   tooltipLabel?: (s: Split) => string
+  /** tooltip labels for the two series */
+  names?: { shows: string; movies: string }
 }) {
   const [ref, width] = useWidth<HTMLDivElement>()
   const [hover, setHover] = useState<number | null>(null)
@@ -90,8 +95,8 @@ export function BarChart({ data, height = 240, tickEvery = 1, tooltipLabel = (s:
         <Tooltip x={Math.min(width - 150, Math.max(0, M.l + x(h.label)! + bw / 2 - 70))}
           y={Math.max(0, M.t + y(h.shows + h.movies) - 92)}>
           <strong>{tooltipLabel(h)}</strong>
-          <Row k="Episodes" v={h.shows} c="var(--show)" />
-          <Row k="Movies" v={h.movies} c="var(--movie)" />
+          <Row k={names.shows} v={h.shows} c="var(--show)" />
+          <Row k={names.movies} v={h.movies} c="var(--movie)" />
         </Tooltip>
       )}
     </div>
