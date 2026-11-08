@@ -190,12 +190,12 @@ def _highlights(df, shows, movies, per_day) -> list[dict]:
     if not per_day.empty:
         day = per_day.idxmax()
         out.append({"key": "biggestDay", "label": "Biggest day",
-                    "value": day.strftime("%-d %b %Y"), "count": int(per_day.max())})
+                    "value": _day(day), "count": int(per_day.max())})
     if not shows.empty:
         binge = shows.groupby(["date", "name"]).size()
         (date, name), n = binge.idxmax(), int(binge.max())
         out.append({"key": "biggestBinge", "label": "Biggest binge",
-                    "value": name, "count": n, "detail": date.strftime("%-d %b %Y")})
+                    "value": name, "count": n, "detail": _day(date)})
     return out
 
 
@@ -220,6 +220,11 @@ def _daily(df: pd.DataFrame) -> list[list[int]]:
 def _titles(df: pd.DataFrame) -> list[list]:
     g = df.groupby(["name", "kind", "year"]).size().reset_index(name="n")
     return [[r.name, r.kind, int(r.year), int(r.n)] for r in g.itertuples(index=False)]
+
+
+def _day(ts: pd.Timestamp) -> str:
+    # "%-d" (no leading zero) is not supported by strftime on Windows.
+    return f"{ts.day} {ts:%b %Y}"
 
 
 def _ordinal(n: int) -> str:

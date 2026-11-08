@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { History } from './components/History'
 import { Overview } from './components/Overview'
 import { RangeSlider, Segmented } from './components/Glass'
@@ -8,27 +8,34 @@ import type { Range } from './lib/aggregate'
 
 type Tab = 'overview' | 'history'
 
+// ?demo opens straight into the sample data (?demo=history for the History tab).
+const demo = new URLSearchParams(location.search).get('demo')
+
 export default function App() {
   const [data, setData] = useState<Analysis | null>(null)
-  const [busy, setBusy] = useState(false)
+  const [busy, setBusy] = useState(demo !== null)
   const [error, setError] = useState<string | null>(null)
   const [tab, setTab] = useState<Tab>('overview')
   const [years, setYears] = useState<Range>([0, 0])
 
-  const load = async (p: Promise<Analysis>) => {
-    setBusy(true)
-    setError(null)
-    try {
-      const d = await p
+  const settle = (p: Promise<Analysis>, startTab: Tab = 'overview') =>
+    p.then((d) => {
       setData(d)
       setYears([d.meta.years[0], d.meta.years.at(-1)!])
-      setTab('overview')
-    } catch (e) {
-      setError(e instanceof Error ? e.message : String(e))
-    } finally {
-      setBusy(false)
-    }
+      setTab(startTab)
+    })
+      .catch((e) => setError(e instanceof Error ? e.message : String(e)))
+      .finally(() => setBusy(false))
+
+  const load = (p: Promise<Analysis>) => {
+    setBusy(true)
+    setError(null)
+    return settle(p)
   }
+
+  useEffect(() => {
+    if (demo !== null) settle(fetchSample(), demo === 'history' ? 'history' : 'overview')
+  }, [])
 
   return (
     <>

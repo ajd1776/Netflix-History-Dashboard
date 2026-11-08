@@ -1,0 +1,76 @@
+# Builds the desktop apps and attaches them to a GitHub Release.
+# Publish a release (or run manually) and this produces:
+#   Netflix-History-mac.zip      (Apple Silicon)
+#   Netflix-History-windows.zip  (Windows 10/11, x64)
+name: Desktop apps
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: macos-latest
+            asset: Netflix-History-mac.zip
+          - os: windows-latest
+            asset: Netflix-History-windows.zip
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - uses: astral-sh/setup-uv@v6
+
+      - name: Install
+        run: |
+          npm --prefix web ci
+          uv sync --directory api --group desktop --group build
+
+      - name: Test
+        run: |
+          uv run --directory api pytest -q
+          npm --prefix web run build
+
+      - name: Build Mac app
+        if: runner.os == 'macOS'
+        run: ./desktop/build-mac.sh
+
+      - name: Build Windows app
+        if: runner.os == 'Windows'
+        run: |
+          uv run --directory api --group desktop --group build pyinstaller \
+            --noconfirm --clean --windowed \
+            --name "Netflix History" \
+            --icon ../desktop/AppIcon.ico \
+            --add-data "../web/dist:web" \
+            --collect-submodules uvicorn \
+            --distpath ../dist --workpath ../build --specpath ../build \
+            ../desktop/launch.py
+          pwsh -Command "Compress-Archive -Path 'dist/Netflix History' -DestinationPath 'dist/${{ matrix.asset }}'"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.asset }}
+          path: dist/${{ matrix.asset }}
+
+      - name: Attach to release
+        if: github.event_name == 'release'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload "${{ github.event.release.tag_name }}" "dist/${{ matrix.asset }}" --clobber

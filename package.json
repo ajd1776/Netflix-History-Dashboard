@@ -7,7 +7,7 @@
     "build": "npm --prefix web run build",
     "start": "npm run build && uv run --directory api netflix-history",
     "app": "npm run build && uv run --directory api --group desktop netflix-history-app",
-    "build:mac": "./mac/build.sh",
+    "build:mac": "./desktop/build-mac.sh",
     "test": "uv run --directory api pytest && npm --prefix web run build"
   }
 }

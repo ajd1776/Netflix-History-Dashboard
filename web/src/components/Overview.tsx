@@ -37,7 +37,7 @@ export function Overview({ data, years }: { data: Analysis; years: Range }) {
   const span = years[0] === years[1] ? `${years[0]}` : `${years[0]}–${years[1]}`
   const recent = useMemo(() => {
     const seen = new Set<string>()
-    return history.filter((h) => h.kind === recentKind && !seen.has(h.name) && seen.add(h.name)).slice(0, 6)
+    return history.filter((h) => h.kind === recentKind && !seen.has(h.name) && seen.add(h.name)).slice(0, 4)
   }, [history, recentKind])
 
   return (
@@ -76,14 +76,13 @@ export function Overview({ data, years }: { data: Analysis; years: Range }) {
       </GlassCard>
 
       <GlassCard className="span-5" title={`Top ${kind === 'show' ? 'shows' : 'movies'}`} subtitle={span}
-        actions={<Segmented label="Title type" value={kind} onChange={setKind}
-          options={[{ value: 'show', label: 'Shows' }, { value: 'movie', label: 'Movies' }]} />}>
+        actions={<>
+          <Stepper label="Titles shown" min={3} max={20} value={topN} onChange={setTopN} />
+          <Segmented label="Title type" value={kind} onChange={setKind}
+            options={[{ value: 'show', label: 'Shows' }, { value: 'movie', label: 'Movies' }]} />
+        </>}>
         <TopTitles items={topTitles(titles, kind, years, topN)}
           color={kind === 'show' ? 'var(--show-fill)' : 'var(--movie-fill)'} />
-        <div className="card-foot">
-          <span>Titles shown</span>
-          <Stepper label="Titles" min={3} max={20} value={topN} onChange={setTopN} />
-        </div>
       </GlassCard>
 
       <GlassCard className="span-6" title="Day of the month"

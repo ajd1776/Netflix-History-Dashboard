@@ -178,19 +178,23 @@ h1, h2 { margin: 0; letter-spacing: -0.025em; }
   transition: transform 0.4s cubic-bezier(0.3, 1.3, 0.4, 1);
 }
 
-/* stepper: − value + in one well */
+/* stepper: [− | 8 | +] in a well the same height as the segmented control */
 .stepper {
-  display: inline-flex; align-items: center; padding: 3px; gap: 2px;
-  border-radius: var(--ctl-radius); background: var(--well); border: 1px solid var(--well-edge);
+  display: inline-grid; grid-template-columns: 28px minmax(30px, auto) 28px; align-items: center;
+  padding: var(--pad, 3px); border-radius: var(--ctl-radius); background: var(--well); border: 1px solid var(--well-edge);
 }
 .stepper button {
-  width: 30px; height: 28px; border: 0; border-radius: 9px; background: none; cursor: pointer;
-  font-size: 17px; line-height: 1; color: var(--accent); transition: background 0.15s, transform 0.15s;
+  height: 28px; border: 0; border-radius: 9px; background: none; cursor: pointer; display: grid; place-items: center;
+  font-size: 16px; font-weight: 600; line-height: 1; color: var(--text-2); transition: background 0.15s, color 0.15s, transform 0.15s;
 }
-.stepper button:hover:not(:disabled) { background: var(--accent-tint); }
-.stepper button:active:not(:disabled) { transform: scale(0.9); }
-.stepper button:disabled { color: var(--text-3); cursor: default; }
-.stepper output { min-width: 3ch; text-align: center; font-weight: 700; font-variant-numeric: tabular-nums; font-size: 14px; }
+.stepper button:hover:not(:disabled) { background: var(--accent-tint); color: var(--accent); }
+.stepper button:active:not(:disabled) { transform: scale(0.88); }
+.stepper button:disabled { color: var(--text-3); opacity: 0.5; cursor: default; }
+.stepper output {
+  height: 28px; display: grid; place-items: center; padding: 0 6px; border-radius: 9px;
+  font-size: 13px; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--accent);
+  border-left: 1px solid var(--well-edge); border-right: 1px solid var(--well-edge); border-radius: 0;
+}
 
 /* range: thin track, white knobs with a red ring, value chips that follow the knobs */
 .range { min-width: 160px; }
@@ -224,11 +228,6 @@ h1, h2 { margin: 0; letter-spacing: -0.025em; }
   padding: 2px 8px; border-radius: 7px; font-size: 11px; font-weight: 700; font-variant-numeric: tabular-nums;
   color: var(--accent); background: var(--accent-tint);
   transition: left 0.08s linear;
-}
-.card-foot {
-  display: flex; align-items: center; justify-content: space-between; gap: 12px;
-  margin-top: 16px; padding-top: 12px; border-top: 0.5px solid var(--grid);
-  font-size: 13px; color: var(--text-2);
 }
 
 /* ---------------------------------------------------------------- layout */
@@ -281,7 +280,7 @@ h1, h2 { margin: 0; letter-spacing: -0.025em; }
 .card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
 .card-head h2 { font-size: 19px; font-weight: 700; }
 .sub { margin: 3px 0 0; color: var(--text-2); font-size: 13px; }
-.card-actions { display: flex; gap: 8px; align-items: center; }
+.card-actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
 
 /* hero */
 .hero { padding: 26px 28px 18px; }
@@ -290,10 +289,9 @@ h1, h2 { margin: 0; letter-spacing: -0.025em; }
 .hero h1 { font-size: 26px; font-weight: 600; color: var(--text-2); }
 .hero .big {
   display: block; font-family: var(--rounded); font-size: clamp(48px, 7vw, 76px); font-weight: 800; line-height: 1;
-  letter-spacing: -0.04em; color: var(--text);
-  background: linear-gradient(180deg, var(--text) 30%, var(--show-hi));
-  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  letter-spacing: -0.04em; color: #fff;
 }
+@media (prefers-color-scheme: light) { .hero .big { color: var(--text); } }
 .kpis { display: grid; grid-template-columns: repeat(4, minmax(110px, 1fr)); gap: 10px; }
 @media (max-width: 720px) { .kpis { grid-template-columns: repeat(2, 1fr); width: 100%; } }
 .kpi { padding: 12px 14px; display: flex; flex-direction: column; gap: 2px; }
