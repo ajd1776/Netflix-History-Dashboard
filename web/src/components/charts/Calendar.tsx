@@ -15,8 +15,8 @@ export function Calendar({ year, counts }: { year: number; counts: Map<string, n
   const offset = (jan1.getDay() + 6) % 7 // Monday = 0
   const days = Math.round((+new Date(year + 1, 0, 1) - +jan1) / 864e5)
   const weeks = Math.ceil((days + offset) / 7)
-  const step = Math.max(6, Math.min(22, (width - LEFT) / weeks))
-  const cell = step - 3
+  const step = Math.min(22, (width - LEFT) / weeks)
+  const cell = step * 0.8
   const max = Math.max(1, ...counts.values())
   const level = (n: number) => (n === 0 ? 0 : Math.min(4, Math.ceil((n / max) * 4)))
 

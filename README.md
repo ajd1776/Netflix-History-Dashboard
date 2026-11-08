@@ -27,7 +27,7 @@
   </p>
 </div>
 
-![Netflix History dashboard](docs/screenshots/overview-dark.png)
+![Netflix History dashboard](docs/screenshots/hero-dark.png)
 
 <details>
   <summary><b>Contents</b></summary>
@@ -56,14 +56,23 @@ Netflix History runs **entirely on your own computer**.
 
 **Overview**
 - Total titles watched, episodes vs movies, active days and your **longest streak** of days in a row.
-- A **timeline** of every month of your history.
-- **Highlights:** top show, top movie, busiest year, busiest month, favourite weekday, busiest date of the month, biggest single day and **biggest binge**.
-- **Monthly activity**, **day of the month** and **day of the week** charts, split into episodes and movies.
+- A **timeline** of every month of your history, with a 3-month trend line. The years outside your filter dim, so you can see what you're looking at.
+- **16 highlight tiles:** top show and movie, busiest year, month, weekday and date, biggest day, biggest binge, your average day, weekend share, how often you watch, longest break, binge sessions, most rewatched, favourite season and the first thing you ever watched.
+
+**Analysis**
+- **What your history says:** plain-English insights worked out from your data, like how much more you watch at weekends, how much of your viewing is binges, and how loyal you are to your favourite show.
+- **Year by year:** totals with the percentage change on the year before and the days you watched.
+- **When you watch:** a weekday-by-month heatmap with the count in every cell.
+- **New titles each year:** how many shows and movies you tried for the first time.
+- **Show deep dive:** your 12 most-watched shows compared on plays, episodes, seasons, days watched, episodes per day, binges, when you started and when you last watched, with a mini chart of each show by year. Click any heading to sort.
+
+**Charts**
+- **Monthly activity**, **day of the month** and **day of the week**, split into episodes and movies.
 - **Top 3 to 20 shows or movies** for any range of years.
 - **Shows vs movies** split.
 - A **viewing calendar** heatmap for each year.
 - **Recently watched** shows and movies.
-- One **year filter** that updates every chart instantly, plus a month range for the day-of-month chart.
+- One **year filter** that updates the charts instantly, plus a month range for the day-of-month chart.
 
 **History**
 - Every title you've watched, with season and episode, **searchable** and filterable by shows or movies.
@@ -82,13 +91,30 @@ Netflix History runs **entirely on your own computer**.
 
 ## Screenshots
 
-| Dark | Light |
-| --- | --- |
-| ![Overview in dark mode](docs/screenshots/overview-dark.png) | ![Overview in light mode](docs/screenshots/overview-light.png) |
+**Insights and year-by-year growth**
 
-| History | Getting started |
+![Insights and year by year](docs/screenshots/insights-dark.png)
+
+**When you watch**
+
+![Weekday by month heatmap](docs/screenshots/when-dark.png)
+
+**Show deep dive**
+
+![Show deep dive table](docs/screenshots/deep-dive-dark.png)
+
+| Light mode | History |
 | --- | --- |
-| ![Searchable history](docs/screenshots/history-dark.png) | ![Drop your CSV to begin](docs/screenshots/upload-dark.png) |
+| ![Overview in light mode](docs/screenshots/overview-light.png) | ![Searchable history](docs/screenshots/history-dark.png) |
+
+<details>
+  <summary><b>See the whole dashboard</b></summary>
+
+![The full dashboard](docs/screenshots/overview-dark.png)
+
+</details>
+
+![Drop your CSV to begin](docs/screenshots/upload-dark.png)
 
 ## Download
 

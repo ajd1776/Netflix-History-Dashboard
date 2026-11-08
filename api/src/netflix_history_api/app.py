@@ -10,8 +10,9 @@ from typing import Annotated
 from fastapi import FastAPI, HTTPException, Query, UploadFile
 from fastapi.staticfiles import StaticFiles
 
-from .analysis import DateOrder, HistoryError, analyse, read_history
+from .parsing import DateOrder, HistoryError, read_history
 from .sample import sample_csv
+from .stats import analyse
 
 MAX_UPLOAD = 20 * 1024 * 1024
 # Inside the Mac app (PyInstaller) the built web files sit next to the code.

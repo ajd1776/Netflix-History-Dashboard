@@ -305,8 +305,7 @@ h1, h2 { margin: 0; letter-spacing: -0.025em; }
 .tile { padding: 16px 18px; border-radius: 22px; display: flex; flex-direction: column; gap: 3px; min-width: 0;
   animation: rise 0.6s 0.08s cubic-bezier(0.2, 0.9, 0.3, 1) both; transition: transform 0.35s cubic-bezier(0.3, 1.5, 0.5, 1); }
 .tile:hover { transform: translateY(-3px) scale(1.015); }
-.tile-icon { width: 34px; height: 34px; padding: 7px; margin-bottom: 8px; border-radius: 10px; background: var(--accent-tint);
-  fill: none; stroke: var(--accent); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.tile-icon { margin-bottom: 8px; }
 .tile-label { font-size: 12px; color: var(--text-2); font-weight: 590; text-transform: uppercase; letter-spacing: 0.04em; }
 .tile-value { font-size: 19px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .tile-count { font-size: 12px; color: var(--text-3); }
@@ -424,3 +423,57 @@ tbody tr:hover { background: var(--accent-tint); }
 .calendar-card .chart { margin: auto 0; }
 
 .tooltip.glass { background: var(--glass-strong); }
+
+/* ---------------------------------------------------------------- insights redesign */
+
+.hero-foot { display: flex; justify-content: flex-end; align-items: center; gap: 16px; margin-top: 6px; }
+.legend-trend { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-2); }
+.legend-trend::before { content: ''; width: 18px; border-top: 2px dashed var(--text-2); }
+.trend-line { fill: none; stroke: var(--text); stroke-width: 1.6; stroke-dasharray: 5 4; opacity: 0.75; }
+.outside { fill: var(--bg); opacity: 0.55; pointer-events: none; }
+
+.insights { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.insights li { display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-items: center; padding: 8px 0;
+  border-bottom: 0.5px solid var(--grid); }
+.insights li:last-child { border-bottom: 0; }
+.insights p { margin: 0; font-size: 14px; line-height: 1.45; color: var(--text-2); }
+.insights b { color: var(--text); font-weight: 700; font-variant-numeric: tabular-nums; }
+.insight-icon, .tile-icon { width: 34px; height: 34px; padding: 7px; border-radius: 10px; background: var(--accent-tint);
+  fill: none; stroke: var(--accent); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+.yoy { display: grid; gap: 4px; margin: 6px 0 0 34px; }
+.yoy-cell { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 8px 2px; border-radius: 10px; background: var(--well); }
+.yoy-change { font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.yoy-change.up { color: var(--accent); }
+.yoy-change.down { color: var(--text-2); }
+.yoy-days { font-size: 11px; color: var(--text-3); font-variant-numeric: tabular-nums; }
+
+.matrix { display: grid; grid-template-columns: 34px repeat(12, 1fr); gap: 4px; }
+.matrix-row { display: contents; }
+.matrix-col { text-align: center; font-size: 11px; padding-bottom: 2px; }
+.matrix-col i { font-style: normal; }
+.matrix-day { font-size: 11px; align-self: center; }
+.matrix-cell { aspect-ratio: 1.3; display: grid; place-items: center; border-radius: 7px; font-size: 10.5px; font-weight: 600;
+  font-variant-numeric: tabular-nums; color: var(--text-2); transition: transform 0.15s; cursor: default; }
+.matrix-cell:hover { transform: scale(1.08); outline: 1.5px solid var(--text); }
+.matrix-cell.l3, .matrix-cell.l4 { color: #fff; }
+@media (max-width: 1300px) { .matrix-col i { display: none; } .matrix-cell { font-size: 9.5px; } }
+
+.sparkline { display: block; }
+.sparkline .on { fill: var(--show); }
+.sparkline .off { fill: var(--well); }
+
+.showtable th { white-space: nowrap; }
+.showtable th button { all: unset; cursor: pointer; }
+.showtable th button:hover { color: var(--text); }
+.showtable th.num, .showtable td.num { text-align: right; font-variant-numeric: tabular-nums; }
+.showtable td { padding: 9px 12px; vertical-align: middle; }
+.showtable .rank-col { width: 28px; color: var(--text-3); font-family: var(--rounded); font-weight: 800; text-align: right; }
+.show-name { position: relative; min-width: 170px; font-weight: 600; }
+.show-name .share { position: absolute; left: 12px; bottom: 4px; height: 3px; max-width: calc(100% - 24px);
+  border-radius: 2px; background: var(--show-fill); opacity: 0.8; }
+
+@media (max-width: 720px) {
+  .card-head { flex-wrap: wrap; }
+  .segmented button { padding: 0 9px; }
+}
